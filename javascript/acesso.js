@@ -27,6 +27,15 @@ function VerificarCadastro(){
             email:cadastrogeral.email,
             senha:cadastrogeral.senha
         };
+        //Lista de CPF
+        if(!localStorage.getItem("lista_professores") == ""){
+            cadastrados_alunos.push(localStorage.getItem("lista_professores"));
+            localStorage.setItem("lista_professores",professor.cpf+","+localStorage.getItem("lista_professores"));
+         }
+         else{
+             localStorage.setItem("lista_professores",professor.cpf+",");
+         }
+        //Lista de Cadastrados
         localStorage.setItem(professor.cpf, JSON.stringify(professor));
         alert("Cadastro concluído!");
     }
@@ -38,6 +47,15 @@ function VerificarCadastro(){
             matricula:cadastrogeral.matricula,
             senha:cadastrogeral.senha
         }
+                //Lista de CPF
+                if(!localStorage.getItem("lista_empresa") == ""){
+                    cadastrados_alunos.push(localStorage.getItem("lista_empresa"));
+                    localStorage.setItem("lista_empresa",empresa.cnpj+","+localStorage.getItem("lista_empresa"));
+                 }
+                 else{
+                     localStorage.setItem("lista_empresa",empresa.cnpj+",");
+                 }
+                //Lista de Cadastrados
         localStorage.setItem(empresa.cnpj, JSON.stringify(empresa));
         alert("Cadastro concluído!");
     }
@@ -57,6 +75,15 @@ function VerificarCadastroAluno(){
         historico:document.forms["cadastroF"]["historico"].value,
         status:select.options[select.selectedIndex].value
     };
+            //Lista de CPF
+   if(!localStorage.getItem("lista_alunos") == ""){
+       cadastrados_alunos.push(localStorage.getItem("lista_alunos"));
+       localStorage.setItem("lista_alunos",aluno.cpf+","+localStorage.getItem("lista_alunos"));
+    }
+    else{
+        localStorage.setItem("lista_alunos",aluno.cpf+",");
+    }
+  //Lista de Cadastrados
     localStorage.setItem(aluno.cpf, JSON.stringify(aluno));
     alert("Cadastro concluído!");
     window.location.href = "../../index.html"
