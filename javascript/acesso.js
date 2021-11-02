@@ -5,6 +5,7 @@ const cadastrados_empresas =[];
 var cadastrogeral = "";
 var select = document.getElementById('status');
 var selectTipo = document.getElementById('tipo');
+var selectTipoLogin = document.getElementById('tipologin');
 
 function VerificarCadastro(){
     cadastrogeral = {
@@ -15,7 +16,8 @@ function VerificarCadastro(){
         senha:document.forms["cadastroG"]["senha"].value,
     }
     if(selectTipo.options[selectTipo.selectedIndex].value == "aluno"){
-        window.location.href = "../Cadastro/Aluno/index.html"
+        localStorage.setItem('cadastro', JSON.stringify(cadastrogeral));
+        window.location.href = "./Cadastro/Aluno/index.html"
     }
     else if(selectTipo.options[selectTipo.selectedIndex].value == "professor"){
         const professor = {
@@ -25,26 +27,73 @@ function VerificarCadastro(){
             email:cadastrogeral.email,
             senha:cadastrogeral.senha
         };
-        cadastrados_professores.push(professor);
+        localStorage.setItem(professor.cpf, JSON.stringify(professor));
+        alert("Cadastro concluído!");
     }
     else{
-
+        const empresa={
+            nome:cadastrogeral.nome,
+            cnpj:cadastrogeral.cpf,
+            email:cadastrogeral.email,
+            matricula:cadastrogeral.matricula,
+            senha:cadastrogeral.senha
+        }
+        localStorage.setItem(empresa.cnpj, JSON.stringify(empresa));
+        alert("Cadastro concluído!");
     }
 }
 
 function VerificarCadastroAluno(){
-    alert(cadastrogeral.nome);
+   const cadastrog = localStorage.getItem('cadastro');
+    const informs = JSON.parse(cadastrog);
     const aluno = {
-        nome:cadastrogeral.nome,
-        cpf:cadastrogeral.cpf,
-        matricula:cadastrogeral.matricula,
-        email:cadastrogeral.email,
-        senha:cadastrogeral.senha,
+        nome:informs.nome,
+        cpf:informs.cpf,
+        matricula:informs.matricula,
+        email:informs.email,
+        senha:informs.senha, 
         periodo:document.forms["cadastroF"]["periodo"].value,
         curso:document.forms["cadastroF"]["curso"].value,
         historico:document.forms["cadastroF"]["historico"].value,
         status:select.options[select.selectedIndex].value
     };
-    cadastrados_alunos.push(aluno);
+    localStorage.setItem(aluno.cpf, JSON.stringify(aluno));
+    alert("Cadastro concluído!");
+    window.location.href = "../../index.html"
 }
 
+function VerificarLogin(){
+    const pessoa = JSON.parse(localStorage.getItem(document.forms["LoginG"]["cpf"].value));
+    if(pessoa == null){
+        alert("CPF/CNPJ ou senha incorretos...");
+    }else{
+    if(selectTipoLogin.options[selectTipoLogin.selectedIndex].value == "professor"){
+        if(pessoa.senha===document.forms["LoginG"]["senha"].value){
+            alert("Bem-vindo "+pessoa.nome+"!");
+            window.location.href = "./Menu/Menu-Professor/index.html";
+        }
+        else{
+            alert("CPF/CNPJ ou senha incorretos...");
+        }
+    }
+    else if(selectTipoLogin.options[selectTipoLogin.selectedIndex].value == "aluno"){
+        if(pessoa.senha===document.forms["LoginG"]["senha"].value){
+            alert("Bem-vindo "+pessoa.nome+"!");
+            window.location.href = "./Menu/Menu-Aluno/index.html";
+        }
+        else{
+            alert("CPF/CNPJ ou senha incorretos...");
+        }
+    }
+    else{
+       const  ListaEmp = JSON.parse(localStorage.getItem('listaempresa'));
+        if(pessoa.senha===document.forms["LoginG"]["senha"].value){
+            alert("Bem-vindo "+pessoa.nome+"!");
+            window.location.href = "./Menu/Menu-Empresa/index.html";
+        }
+        else{
+            alert("CPF/CNPJ ou senha incorretos...");
+        }
+   }
+}
+}
