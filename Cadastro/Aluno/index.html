@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Cadastro Aluno</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="content first-content">
+                <div class="first-column">
+                    <h2 class="title title-primary">bem-vindo, novo aluno!</h2>
+                    <p class="description description-primary">Conclua seu cadastro para utilizar o sistema</p>
+                </div>
+                <div class="second-column">
+                    <h2 class="title title-second">Cadastro Aluno</h2>
+                    <p class="description description-second">Preencha os campos abaixo:</p>
+                    <form name="cadastroF" onsubmit="VerificarCadastroAluno()" method="post" class="form" id="formcad">
+                        <label class="label-input" for="">
+                            <i class="far fa-user icon-modify"></i>
+                            <input type="text" placeholder="Período" name="periodo" required>
+                        </label>
+
+                        <label class="label-input" for="">
+                            <i class="far fa-user icon-modify"></i>
+                            <input type="text" placeholder="Curso" name="curso" required>
+                        </label>
+
+                        <label class="label-input" for="">
+                            <i class="far fa-user icon-modify"></i>
+                            <input type="textarea" placeholder="Histórico de empregos" name="historico" required>
+                        </label>
+
+                        <p>Status:</p>
+
+                        <select name="status" id="status">
+                            <option value="aluno">Contratado</option>
+                            <option value="professor">Desempregado</option>
+                            <option value="empresa">Estagiando</option>
+                        </select>
+
+                        <button class="btn btn-second">finalizar cadastro</button>
+                    </form>
+                </div>
+                <!-- second column -->
+            </div>
+            <!-- first content -->
+        </div>
+        <script src="app.js"></script>
+        <script src="../../javascript/acesso.js"></script>
+    </body>
+</html>
