@@ -22,7 +22,7 @@ function exibirAlunos() {
   lista.innerHTML = "";
   result.forEach((result) => {
     const newLi = document.createElement("li");
-    const newText = document.createTextNode(result.nome+ " - " + result.matricula);
+    const newText = document.createTextNode(result.nome + " - " + result.matricula +" - " + result.cpf + " - " + result.periodo);
     newLi.appendChild(newText);
     lista.appendChild(newLi);
   });
