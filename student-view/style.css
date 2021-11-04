@@ -118,7 +118,7 @@ header {
 .banner {
   position: absolute;
   top: 10%;
-  left: 5%;
+  left: 47%;
 }
 
 .banner h1 {
@@ -130,15 +130,6 @@ header {
   margin-bottom: 2rem;
   opacity: 0;
   animation: moveBanner 1s 0.5s forwards;
-}
-
-.banner p {
-  font-family: var(--font-secundary);
-  color: rgb(0, 0, 0);
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: moveBanner 1s 0.7s forwards;
 }
 
 @keyframes moveBanner {
@@ -189,6 +180,21 @@ header {
 .list-view{
   background-color: #660000;
   position: absolute;
-  top: 80%;
-  left: 5%;
+  top: 20%;
+  left: 40%;
+  color: #fff;
+  font-family: var(--font-secundary);
+  text-align: center;
+  font-size: 24px;
+  padding: 0.8rem;
+  border-radius: 2%;
+  width: 30rem;
+  opacity: 0;
+  animation: moveBanner 1s 0.5s forwards;
+}
+
+.list{
+  animation: moveBanner 1s 0.5s forwards;
+  opacity: 0;
+  margin-bottom: 2%;
 }
