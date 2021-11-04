@@ -17,12 +17,10 @@ function exibirAlunos() {
       const newLi = document.createElement("li");
       const newText = document.createTextNode(result.nome);
       newLi.appendChild(newText);
-      newLi.appendChild(result.cpf);
       lista.appendChild(newLi);
     });
   }
   
-
 function procurarAluno(){
     if(cpf.value == " "){
        alert("Insira algo no campo CPF.")
@@ -34,7 +32,7 @@ function procurarAluno(){
        if(aluno==null){
           alert("CPF do aluno não encontrado!");
        }else{
-           return aluno
+           
        }
 }
 
