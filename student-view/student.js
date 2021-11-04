@@ -28,6 +28,8 @@ function exibirAlunos() {
   });
 }
 function filtrarAluno() {
-   
+  
 }
-exibirlista();
+  exibirlista();
+
+
