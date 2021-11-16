@@ -1,6 +1,9 @@
  result = []
+ resultOne = []
  const lista = document.getElementById('list')
- let filter = document.getElementsByTagName('filter')
+ const filter = document.getElementById('filtrar')
+ const btFiltrar = document.getElementById("btFiltrar")
+ const response = document.getElementById("resp")
 function studentView() {
   window.location.href = ".student-view/student-view.html";
 }
@@ -20,16 +23,26 @@ function exibirlista() {
 }
 function exibirAlunos() {
   lista.innerHTML = "";
-  result.forEach((result) => {
+  result.forEach((result) => { if(result!=null){
     const newLi = document.createElement("li");
-    const newText = document.createTextNode(result.nome + " - " + result.matricula +" - " + result.cpf + " - " + result.periodo);
+    const newText = document.createTextNode(result.nome + " - " + result.matricula +" - " + result.periodo + " - " + result.status);
     newLi.appendChild(newText);
     lista.appendChild(newLi);
+  }
   });
 }
 function filtrarAluno() {
+  aluno  = JSON.parse(localStorage.getItem(filter.value))
+  if(aluno!=null){
+    const newText = aluno.nome + " - " + aluno.matricula +" - " + aluno.periodo + " - " + aluno.status;
+    response.innerHTML = newText;
+    lista.style.display = "none"
+  }else{
+    alert('CPF do aluno não encontrado')
+  }
   
 }
+  btFiltrar.onclick = filtrarAluno;
   exibirlista();
 
 
