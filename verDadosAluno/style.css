@@ -140,12 +140,12 @@ header {
 }
 
 .sidebar {
-  width: 20rem;
+  width: 22rem;
   height: 100vh;
   background-color: #660000;
   position: fixed;
   top: 0;
-  right: -20rem;
+  right: -22rem;
   transition: all 1s;
   z-index: 80;
 }
