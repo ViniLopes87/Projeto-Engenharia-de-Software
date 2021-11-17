@@ -29,10 +29,10 @@
               <br>
             </div>
         
-            <form>      
+            <form name="EnvSugest" onsubmit="SendSugestao()" method="post" class="form" id="EnvSugest"> 
               <div class="campo">
-                <label for="cnjp"><strong>CNPJ</strong></label>
-                <input type="text" name="cnjp" id="cnjp" required>
+                <label for="matricula"><strong>Matrícula</strong></label>
+                <input type="text" name="matricula" id="matricula" required>
               </div>
         
               <div class="campo">
@@ -42,12 +42,12 @@
               
               <div class="campo">
                 <label for="issue"><strong>Tipo do Problema:</strong></label>
-                <select id="issue" required>
+                <select name="tipo" id="issue" required>
                   <option selected disabled value="">Selecione</option>
-                  <option>Bug</option>
-                  <option>Sugestão</option>
-                  <option>Reclamação</option>
-                  <option>Dúvida</option>
+                  <option value="bug">Bug</option>
+                  <option value="sugestao">Sugestão</option>
+                  <option value="reclamacao">Reclamação</option>
+                  <option value="duvida">Dúvida</option>
                 </select>
               </div>
 
@@ -57,13 +57,13 @@
                   <input type="radio" name="page" value="home" checked>Home do Menu
                 </label>
                 <label>
-                  <input type="radio" name="page" value="visualizar">Avaliação dos estagiários
+                  <input type="radio" name="page" value="avaliacaoEstagiario">Avaliação dos estagiários
                 </label>
                 <label>
-                  <input type="radio" name="page" value="avaliacao">Login
+                  <input type="radio" name="page" value="login">Login
                 </label>
                 <label>
-                  <input type="radio" name="page" value="avaliacao">Cadastro
+                  <input type="radio" name="page" value="cadastro">Cadastro
                 </label>
               </div>
 
@@ -74,7 +74,7 @@
                 <label><strong>Obs: Caso esteja relatando um bug, lembre de escrever os passos para a reprodução do bug no campo acima</strong></label>
               </div>
 
-              <button class="botao" type="submit" onsubmit="">Concluído</button>
+              <button class="botao" type="submit" onsubmit="SendSugestao()">Concluído</button>
         
             </form>
           </div>
@@ -93,4 +93,5 @@
    </body>
 
    <script src="app.js"></script>
+   <script src="../../javascript/ControleSugestoes.js"></script>
 </html>
