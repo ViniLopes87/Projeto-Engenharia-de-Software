@@ -171,12 +171,14 @@ header {
 #titulo {
   font-family: sans-serif;
   color: #ffffff;
+  text-shadow: 0.2rem 0.2rem #660000;
   margin-left: 7%;
 } 
 
 #subtitulo {
   font-family: sans-serif;
   color: #ffffff;
+  text-shadow: 0.1rem 0.1rem #660000;
   margin-left: 16%;
 }
 
@@ -198,6 +200,7 @@ input, select, textarea, button {
 .campo label {
   margin-bottom: 0.2em;
   color: #ffffff;
+  text-shadow: 0.1rem 0.1rem #660000;
   display: block;
 }
 
