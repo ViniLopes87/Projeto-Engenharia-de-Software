@@ -15,7 +15,7 @@
   --font-action: "Muli", serif;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -101,7 +101,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.3;
+  opacity: 0.5;
   animation: zoom 25s;
 }
 
@@ -116,8 +116,30 @@ header {
 
 .banner {
   position: absolute;
-  top: 5%;
+  top: 30%;
   left: 15%;
+}
+
+.banner h1 {
+  color: #ffffff;
+  font-size: 3.5rem;
+  font-family: var(--font-primary);
+  font-weight: 200;
+  text-shadow: 0.3rem 0.4rem 2px #660000;
+  line-height: 3.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: moveBanner 1s 0.5s forwards;
+}
+
+.banner p {
+  font-family: var(--font-secundary);
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 0.2rem 0.2rem #660000;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: moveBanner 1s 0.7s forwards;
 }
 
 @keyframes moveBanner {
@@ -166,81 +188,4 @@ header {
 
 .menu-link:hover {
   color: rgb(136, 135, 135);
-}
-
-#titulo {
-  font-family: sans-serif;
-  color: #ffffff;
-  text-shadow: 0.2rem 0.2rem #660000;
-  margin-left: 7%;
-} 
-
-#subtitulo {
-  font-family: sans-serif;
-  color: #ffffff;
-  text-shadow: 0.1rem 0.1rem #660000;
-  margin-left: 16%;
-}
-
-fieldset {
-  border: 0;
-}
-
-input, select, textarea, button {
-  font-family: sans-serif;
-  font-size: 1em;
-  color: #660000;
-  border-radius: 5px;
-}
-
-.campo {
-  margin-bottom: 1em;
-}
-
-.campo label {
-  margin-bottom: 0.2em;
-  color: #ffffff;
-  text-shadow: 0.1rem 0.1rem #660000;
-  display: block;
-}
-
-.campo input[type="text"], .campo input[type="email"], .campo select, .campo textarea {
-  padding: 0.2em;
-  border: 1px solid #ffffff;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-  display: block;
-}
-
-.campo select option {
-  padding-right: 1em;
-}
-
-.campo input:focus, .campo select:focus, .campo textarea:focus {
-  background: #E0E0F8;
-}
-
-.botao {
-  font-size: 1.2em;
-  background: #660000;
-  border: 0;
-  margin-bottom: 1em;
-  color: #ffffff;
-  padding: 0.2em 0.6em;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-  position: absolute;
-  top: 103%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
-}
-
-.botao:hover {
-  background: #5f1b1b;
-  box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
-  text-shadow: none;
-}
-
-.botao, select{
-  cursor: pointer;
 }

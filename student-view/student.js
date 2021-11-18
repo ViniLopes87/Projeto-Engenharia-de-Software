@@ -8,10 +8,6 @@ function studentView() {
   window.location.href = ".student-view/student-view.html";
 }
 
-function teste(){
- console.log('teste')
-}
-
 function exibirlista() {
   alunos = localStorage.getItem("lista_alunos").split(",");
   var i = 0;
@@ -38,6 +34,10 @@ function exibirAlunos() {
       td_periodo.innerText = result[i].periodo;
       td_status.innerText = result[i].status;
       
+      let imgInfo = document.createElement('info');
+      imgInfo.innerText = "(+)"
+      td_info.appendChild(imgInfo);
+      imgInfo.setAttribute("onclick","teste()")
   } 
   //lista.innerHTML = "";
   //result.forEach((result) => { if(result!=null){
@@ -67,13 +67,22 @@ function filtrarAluno() {
     td_status.innerText = aluno.status;
     tbody.style.display = 'none';
 
+    let imgInfo = document.createElement('info');
+    imgInfo.innerText = "(+)"
+    td_info.appendChild(imgInfo);
+    imgInfo.setAttribute("onclick","teste()")
+
     //const newText = aluno.nome + " - " + aluno.matricula +" - " + aluno.periodo + " - " + aluno.status;
     //response.innerHTML = newText;
     //tbody.style.display = "none"
+
   }else{
     alert('CPF do aluno não encontrado')
   }
   
+}
+function teste(){
+  alert('teste')
 }
   btFiltrar.onclick = filtrarAluno;
   exibirlista();
