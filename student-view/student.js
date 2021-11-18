@@ -1,9 +1,9 @@
  result = []
- resultOne = []
- const lista = document.getElementById('list')
+ //resultOne = []
+ //const lista = document.getElementById('list')
  const filter = document.getElementById('filtrar')
  const btFiltrar = document.getElementById("btFiltrar")
- const response = document.getElementById("resp")
+ //const response = document.getElementById("resp")
 function studentView() {
   window.location.href = ".student-view/student-view.html";
 }
@@ -31,7 +31,7 @@ function exibirAlunos() {
 
       td_nome.innerText = result[i].nome;
       td_matricula.innerText = result[i].matricula;
-      td_periodo.innerText = result[i].periodo;
+      td_periodo.innerText = result[i].periodo+"º";
       td_status.innerText = result[i].status;
       
       let imgInfo = document.createElement('info');
@@ -51,34 +51,42 @@ function exibirAlunos() {
 function filtrarAluno() {
   let tbody2 = document.getElementById('tbody2');
   tbody2.innerText = "";
-  aluno  = JSON.parse(localStorage.getItem(filter.value))
-  if(aluno!=null){
-    let tr = tbody2.insertRow();
+  if(filter.value!=""){
+    aluno  = JSON.parse(localStorage.getItem(filter.value))
+    if(aluno!=null){
+      tbody.style.display = 'none';
 
-    let td_nome = tr.insertCell();
-    let td_matricula = tr.insertCell();
-    let td_periodo = tr.insertCell();
-    let td_status = tr.insertCell();
-    let td_info = tr.insertCell();
-
-    td_nome.innerText = aluno.nome;
-    td_matricula.innerText = aluno.matricula;
-    td_periodo.innerText = aluno.periodo;
-    td_status.innerText = aluno.status;
-    tbody.style.display = 'none';
-
-    let imgInfo = document.createElement('info');
-    imgInfo.innerText = "(+)"
-    td_info.appendChild(imgInfo);
-    imgInfo.setAttribute("onclick","teste()")
-
-    //const newText = aluno.nome + " - " + aluno.matricula +" - " + aluno.periodo + " - " + aluno.status;
-    //response.innerHTML = newText;
-    //tbody.style.display = "none"
-
+      let tr = tbody2.insertRow();
+  
+      let td_nome = tr.insertCell();
+      let td_matricula = tr.insertCell();
+      let td_periodo = tr.insertCell();
+      let td_status = tr.insertCell();
+      let td_info = tr.insertCell();
+  
+      td_nome.innerText = aluno.nome;
+      td_matricula.innerText = aluno.matricula;
+      td_periodo.innerText = aluno.periodo+"º";
+      td_status.innerText = aluno.status;
+      
+  
+      let imgInfo = document.createElement('info');
+      imgInfo.innerText = "(+)"
+      td_info.appendChild(imgInfo);
+      imgInfo.setAttribute("onclick","teste()")
+      
+      //const newText = aluno.nome + " - " + aluno.matricula +" - " + aluno.periodo + " - " + aluno.status;
+      //response.innerHTML = newText;
+      //tbody.style.display = "none"
+  
+    }else{
+      alert('CPF do aluno não encontrado')
+    }
   }else{
-    alert('CPF do aluno não encontrado')
+     alert('Insira um CPF no campo')
   }
+  
+  
   
 }
 function teste(){
