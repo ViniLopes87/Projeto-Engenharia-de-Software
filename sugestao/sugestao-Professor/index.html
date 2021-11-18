@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../imagens/logo.png" />
+    <title>Sugestão/Reclamação</title>
+  </head>
+  <body>
+
+    <div class="container">
+
+        <div class="close">
+          <div class="line" id="line1"></div>
+          <div class="line" id="line2"></div>
+          <div class="line" id="line3"></div>
+          <span>Fechar</span>
+        </div>  
+
+        <header id="sugestão/reclamação">
+          <div class="img-wrapper">
+            <img src="../../imagens/fundo.jpg" alt="">
+          </div>
+          <div class="banner">
+            <div>
+              <h1 id="titulo">Sugestões/Reclamações</h1>
+              <p id="subtitulo">Explique seu problema ou sugestão</p>
+              <br>
+            </div>
+        
+            <form name="EnvSugest" onsubmit="SendSugestao()" method="post" class="form" id="EnvSugest">   
+              <div class="campo">
+                <label for="matricula"><strong>Matrícula</strong></label>
+                <input type="text" name="matricula" id="matricula" required>
+              </div>
+        
+              <div class="campo">
+                <label for="email"><strong>Email</strong></label>
+                <input type="email" name="email" id="email" required>
+              </div>
+              
+              <div class="campo">
+                <label for="issue"><strong>Tipo do Problema:</strong></label>
+                <select name="tipo" id="issue" required>
+                  <option selected disabled value="">Selecione</option>
+                  <option value="bug">Bug</option>
+                  <option value="sugestao">Sugestão</option>
+                  <option value="reclamacao">Reclamação</option>
+                  <option value="duvida">Dúvida</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label><strong>Qual a página que você está falando?</strong></label>
+                <label>
+                  <input type="radio" name="page" value="home" checked>Home do Menu
+                </label>
+                <label>
+                  <input type="radio" name="page" value="visualizar">Visualizar os dados dos alunos
+                </label>
+                <label>
+                  <input type="radio" name="page" value="login">Login
+                </label>
+                <label>
+                  <input type="radio" name="page" value="cadastro">Cadastro
+                </label>
+              </div>
+
+              <div class="campo">
+                <label for="experiencia"><strong>Conte um pouco mais da sua experiência: </strong></label>
+                <textarea rows="6" style="width: 26em" id="experiencia" name="experiencia" required></textarea>
+                <br>
+                <label><strong>Obs: Caso esteja relatando um bug, lembre de escrever os passos para a reprodução do bug no campo acima</strong></label>
+              </div>
+
+              <button class="botao" type="submit" onsubmit="SendSugestao()">Concluído</button>
+        
+            </form>
+          </div>
+        </header>
+
+        <aside class="sidebar">
+          <nav>
+            <ul class="menu">
+              <li class="menu-item"><a href="../../Menu/Menu-Professor/index.html" class="menu-link">Home</a></li>
+              <li class="menu-item"><a href="../../student-view/professor-view.html" class="menu-link">Visualizar os dados dos alunos</a></li>
+              <li class="menu-item"><a href="index.html" class="menu-link">Sugestão/Reclamação</a></li>
+            </ul>
+          </nav>
+        </aside>
+    </div>
+   </body>
+
+   <script src="app.js"></script>
+   <script src="../../javascript/ControleSugestoes.js"></script>
+</html>
