@@ -11,16 +11,17 @@ function SendSugestao() {
     page: document.forms["EnvSugest"]["page"].value,
     Texp: document.forms["EnvSugest"]["experiencia"].value,
   };
-  localStorage.setItem(
-    "matricula:" + InfoGeral.matricula,
-    JSON.stringify(InfoGeral)
-  );
   if (!localStorage.getItem("lista_sugestao") == "") {
+    listsugestoes = localStorage.getItem("lista_sugestao").split(",");
+    qtd = listsugestoes.length + 1;
+    localStorage.setItem("codigo:" + qtd, JSON.stringify(InfoGeral));
+
     localStorage.setItem(
       "lista_sugestao",
       localStorage.getItem("lista_sugestao") + "," + InfoGeral.matricula
     );
   } else {
+    localStorage.setItem("codigo:1", JSON.stringify(InfoGeral));
     localStorage.setItem("lista_sugestao", InfoGeral.matricula);
   }
   alert("Sugestão enviada!");
@@ -31,7 +32,7 @@ function ExibeSugestao() {
   result = [];
   sugestoes = localStorage.getItem("lista_sugestao").split(",");
   for (i; i <= sugestoes.length; i++) {
-    sugestoesF = JSON.parse(localStorage.getItem("matricula:" + sugestoes[i]));
+    sugestoesF = JSON.parse(localStorage.getItem("codigo:" + i));
     result.push(sugestoesF);
   }
   menulista.innerHTML = "";
@@ -40,11 +41,11 @@ function ExibeSugestao() {
       const newLi = document.createElement("li");
       const newText = document.createTextNode(
         result.email +
-          " - " +
+          " | " +
           formatarMsg(result.issue) +
-          " - " +
+          " | " +
           formatarMsg(result.page) +
-          " - " +
+          " | " +
           result.Texp
       );
       newLi.appendChild(newText);
