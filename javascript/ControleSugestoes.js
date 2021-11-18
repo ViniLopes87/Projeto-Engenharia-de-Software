@@ -91,7 +91,7 @@ function DeletarSugest(codigo) {
   sugestoes = localStorage.getItem("lista_sugestao").split(",");
   localStorage.removeItem("lista_sugestao");
   for (j = 0; j <= sugestoes.length; j++) {
-    if (sugestoes[j] != codigo) {
+    if (sugestoes[j] != codigo && sugestoes[j] != null) {
       if (j === 0) {
         localStorage.setItem("lista_sugestao", sugestoes[j]);
       } else {
