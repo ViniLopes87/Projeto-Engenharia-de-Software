@@ -117,7 +117,7 @@ header {
 .banner {
   position: absolute;
   top: 5%;
-  left: 26%;
+  left: 25%;
 }
 
 .banner h1 {
@@ -132,16 +132,6 @@ header {
   animation: moveBanner 1s 0.5s forwards;
 }
 
-.banner p {
-  font-family: var(--font-secundary);
-  color: #fff;
-  font-size: 2rem;
-  text-shadow: 0.2rem 0.2rem #660000;
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: moveBanner 1s 0.7s forwards;
-}
-
 @keyframes moveBanner {
   0% {
     transform: translateY(10rem) rotateY(-30deg);
@@ -150,6 +140,32 @@ header {
     transform: translateY(0) rotateY(0);
     opacity: 1;
   }
+}
+
+#exemplo {
+  position: absolute;
+  top: 15%;
+  left: 23%;
+  font-family: var(--font-secundary);
+  color: #fff;
+  font-size: 2.3rem;
+  text-shadow: 0.2rem 0.2rem #660000;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: moveBanner 1s 0.7s forwards;
+}
+
+#lista {
+  position: absolute;
+  top: 25%;
+  left: 21%;
+  font-family: var(--font-secundary);
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 0.15rem 0.15rem #660000;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: moveBanner 1s 0.7s forwards;
 }
 
 .sidebar {
