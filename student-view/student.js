@@ -22,21 +22,54 @@ function exibirlista() {
   exibirAlunos();
 }
 function exibirAlunos() {
-  lista.innerHTML = "";
-  result.forEach((result) => { if(result!=null){
-    const newLi = document.createElement("li");
-    const newText = document.createTextNode(result.nome + " - " + result.matricula +" - " + result.periodo + " - " + result.status);
-    newLi.appendChild(newText);
-    lista.appendChild(newLi);
-  }
-  });
+  let tbody = document.getElementById('tbody')
+  for(let i = 0; i < result.length;i++){
+
+      let tr = tbody.insertRow();
+      
+      let td_nome = tr.insertCell();
+      let td_matricula = tr.insertCell();
+      let td_periodo = tr.insertCell();
+      let td_status = tr.insertCell();
+      let td_info = tr.insertCell();
+
+      td_nome.innerText = result[i].nome;
+      td_matricula.innerText = result[i].matricula;
+      td_periodo.innerText = result[i].periodo;
+      td_status.innerText = result[i].status;
+      
+  } 
+  //lista.innerHTML = "";
+  //result.forEach((result) => { if(result!=null){
+    //const newLi = document.createElement("li");
+    //const newText = document.createTextNode(result.nome + " - " + result.matricula +" - " + result.periodo + " - " + result.status);
+    //newLi.appendChild(newText);
+    //lista.appendChild(newLi);
+  //}
+  //});
 }
 function filtrarAluno() {
+  let tbody2 = document.getElementById('tbody2');
+  tbody2.innerText = "";
   aluno  = JSON.parse(localStorage.getItem(filter.value))
   if(aluno!=null){
-    const newText = aluno.nome + " - " + aluno.matricula +" - " + aluno.periodo + " - " + aluno.status;
-    response.innerHTML = newText;
-    lista.style.display = "none"
+    let tr = tbody2.insertRow();
+
+    let td_nome = tr.insertCell();
+    let td_matricula = tr.insertCell();
+    let td_periodo = tr.insertCell();
+    let td_status = tr.insertCell();
+    let td_info = tr.insertCell();
+
+    td_nome.innerText = aluno.nome;
+    td_matricula.innerText = aluno.matricula;
+    td_periodo.innerText = aluno.periodo;
+    td_status.innerText = aluno.status;
+    tbody.style.display = 'none';
+
+    //const newText = aluno.nome + " - " + aluno.matricula +" - " + aluno.periodo + " - " + aluno.status;
+    //response.innerHTML = newText;
+    //tbody.style.display = "none"
   }else{
     alert('CPF do aluno não encontrado')
   }
