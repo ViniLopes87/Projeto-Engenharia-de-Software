@@ -2,12 +2,7 @@ var selectIssue = document.getElementById("issue");
 var opt = "";
 
 function SendSugestao() {
-  if (!localStorage.getItem("lista_sugestao") == "") {
-    listsugestoes = localStorage.getItem("lista_sugestao").split(",");
-    qtd = listsugestoes.length + 1;
-  } else {
-    qtd = 1;
-  }
+  qtd = Math.random() * (1000 - 1) + 1;
   const InfoGeral = {
     codigo: qtd,
     matricula: document.forms["EnvSugest"]["matricula"].value,
@@ -24,8 +19,8 @@ function SendSugestao() {
       localStorage.getItem("lista_sugestao") + "," + qtd
     );
   } else {
-    localStorage.setItem("codigo:1", JSON.stringify(InfoGeral));
-    localStorage.setItem("lista_sugestao", "1");
+    localStorage.setItem("codigo:" + qtd, JSON.stringify(InfoGeral));
+    localStorage.setItem("lista_sugestao", qtd);
   }
   alert("Sugestão enviada!");
 }

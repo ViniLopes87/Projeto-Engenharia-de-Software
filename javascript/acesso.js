@@ -78,6 +78,7 @@ function VerificarCadastroAluno() {
     curso: document.forms["cadastroF"]["curso"].value,
     historico: document.forms["cadastroF"]["historico"].value,
     status: select.options[select.selectedIndex].value,
+    avaliacao: "5",
   };
   //Lista de CPF
   if (!localStorage.getItem("lista_alunos") == "") {
