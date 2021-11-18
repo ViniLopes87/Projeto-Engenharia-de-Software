@@ -144,21 +144,22 @@ header {
 
 #exemplo {
   position: absolute;
-  top: 15%;
+  top: 20%;
   left: 23%;
   font-family: var(--font-secundary);
   color: #fff;
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   text-shadow: 0.2rem 0.2rem #660000;
   margin-bottom: 2rem;
   opacity: 0;
   animation: moveBanner 1s 0.7s forwards;
+  font-weight: bold;
 }
 
 #lista {
   position: absolute;
   top: 25%;
-  left: 21%;
+  left: 11%;
   font-family: var(--font-secundary);
   color: #fff;
   font-size: 2rem;
@@ -167,74 +168,26 @@ header {
   opacity: 0;
   animation: moveBanner 1s 0.7s forwards;
 }
-table,
-th,
-td {
-  border: 1px solid grey;
+
+table, th, td {
+  border: 1px solid #000;
+  background-color: #a0a0a0;
 }
+
 button {
-  font-family: var(--font-secundary);
-  color: #fff;
   font-size: 2rem;
-  width: 100px;
-  height: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  background: red;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-  background: #e62222;
-}
-
-button,
-button span {
-  transition: 200ms;
-}
-
-button .text {
-  transform: translateX(35px);
-  color: white;
-  font-weight: bold;
-}
-
-button .icon {
-  position: absolute;
-  border-left: 1px solid #c41b1b;
-  transform: translateX(110px);
-  height: 40px;
-  width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-button svg {
-  width: 15px;
-  fill: #eee;
+  background: #660000;
+  border: 0;
+  color: #ffffff;
+  padding: 0.2em 0.6em;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  width: 150px;
+  height: 45px;
 }
 
 button:hover {
-  background: #ff3636;
-}
-
-button:hover .text {
-  color: transparent;
-}
-
-button:hover .icon {
-  width: 150px;
-  border-left: none;
-  transform: translateX(0);
-}
-
-button:focus {
-  outline: none;
-}
-
-button:active .icon svg {
-  transform: scale(0.8);
+  background: #642a2a;
 }
 
 .sidebar {
