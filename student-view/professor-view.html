@@ -18,16 +18,46 @@
 
         <header id="home">
             <div class="img-wrapper" style=background-color:white>
-                
             </div>
             <div class="banner">
                 <h1>Alunos</h1>
             </div>
         </header>
-        <div class=list-view>
-            <ul class=list id="list">
-            </ul>
-            <input placeholder="Buscar Aluno" />
+        <div class=list-view id = "divtb">
+          <input type="text" placeholder="CPF" name="filter" id = "filtrar">
+          <button id = "btFiltrar">Filtrar</button>
+          <table border="2" id = "tb1">
+            <thead>
+              <th>Nome</th>
+              <th>Nº Matricula</th>
+              <th>Periodo</th>
+              <th>Status</th>
+              <th>Info</th>
+            </thead>
+            <tbody id = "tbody">
+
+            </tbody>
+            <tbody id = "tbody2">
+
+            </tbody>
+          </table>
+          <table class = "tb2" id = "tb2" border="2">
+            <thead>
+              <th>Nome</th>
+              <th>Nº Matricula</th>
+              <th>Periodo</th>
+              <th>Status</th>
+              <th>CPF</th>
+              <th>Email</th>
+              <th>Curso</th>
+              <th>Histórico</th>
+              <th>Avaliação</th>
+              <th>Info</th>
+            </thead>
+            <tbody id = "tbody3">
+
+            </tbody>
+          </table>
         </div>
         <aside class="sidebar">
           <nav> 
