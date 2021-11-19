@@ -24,13 +24,13 @@ function exibirAlunos() {
       let tr = tbody.insertRow();
       
       let td_nome = tr.insertCell();
-      let td_matricula = tr.insertCell();
+      let td_cpf = tr.insertCell();
       let td_periodo = tr.insertCell();
       let td_status = tr.insertCell();
       let td_info = tr.insertCell();
 
       td_nome.innerText = result[i].nome;
-      td_matricula.innerText = result[i].matricula;
+      td_cpf.innerText = result[i].cpf;
       td_periodo.innerText = result[i].periodo+"º";
       td_status.innerText = result[i].status;
       
@@ -53,13 +53,13 @@ function filtrarAluno() {
       let tr = tbody2.insertRow();
   
       let td_nome = tr.insertCell();
-      let td_matricula = tr.insertCell();
+      let td_cpf = tr.insertCell();
       let td_periodo = tr.insertCell();
       let td_status = tr.insertCell();
       let td_info = tr.insertCell();
   
       td_nome.innerText = aluno.nome;
-      td_matricula.innerText = aluno.matricula;
+      td_cpf.innerText = aluno.cpf;
       td_periodo.innerText = aluno.periodo+"º";
       td_status.innerText = aluno.status;
       
@@ -81,8 +81,6 @@ function ExibirDados(Cpf){
   divtb = document.getElementById('divtb');
   aluno = JSON.parse(localStorage.getItem(Cpf));
   if(aluno!=null){
-    divtb.style.width = "55rem"
-    divtb.style.left = "20%"
     tb1 = document.getElementById('tb1');
     tb2 = document.getElementById('tb2');
     tbody3 = document.getElementById('tbody3');
@@ -125,9 +123,8 @@ function voltar(){
   tb1 = document.getElementById('tb1');
   tb2 = document.getElementById('tb2');
   divtb = document.getElementById('divtb');
-  divtb.style.width = "30rem"
-  divtb.style.left = "40%"
-  tb1.style.display = 'block';
+  divtb.style.width = "100%"
+  tb1.style.display = 'inline-table';
   tb2.style.display = 'none';
 }
 

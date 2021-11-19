@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" sizes="16x16" href="../../Projeto-Engenharia-de-Software/imagens/logo.png" />
     <title>Visualizar Alunos</title>
@@ -23,13 +24,11 @@
                 <h1>Alunos</h1>
             </div>
         </header>
-        <div class=list-view id = "divtb">
-          <input type="text" placeholder="CPF" name="filter" id = "filtrar">
-          <button id = "btFiltrar">Filtrar</button>
-          <table border="2" id = "tb1">
+        <div class="content" id = "divtb">
+          <table class="rTable" id="tb1">
             <thead>
               <th>Nome</th>
-              <th>Nº Matricula</th>
+              <th>CPF</th>
               <th>Periodo</th>
               <th>Status</th>
               <th>Info</th>
@@ -41,7 +40,7 @@
 
             </tbody>
           </table>
-          <table class = "tb2" id = "tb2" border="2">
+          <table class="rTable2 tb2" id="tb2">
             <thead>
               <th>Nome</th>
               <th>Nº Matricula</th>
@@ -55,10 +54,12 @@
               <th>Info</th>
             </thead>
             <tbody id = "tbody3">
-
+              
             </tbody>
           </table>
         </div>
+        <input class="filter-input" type="text" placeholder="CPF.." name="filter" id = "filtrar">
+        <button class="filter-button" id = "btFiltrar"><i class="fa fa-search"></i></button>
         <aside class="sidebar">
           <nav> 
             <ul class="menu">
