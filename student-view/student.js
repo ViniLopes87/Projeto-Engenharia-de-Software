@@ -81,8 +81,6 @@ function ExibirDados(Cpf){
   divtb = document.getElementById('divtb');
   aluno = JSON.parse(localStorage.getItem(Cpf));
   if(aluno!=null){
-    divtb.style.width = "55rem"
-    divtb.style.left = "20%"
     tb1 = document.getElementById('tb1');
     tb2 = document.getElementById('tb2');
     tbody3 = document.getElementById('tbody3');
@@ -125,9 +123,8 @@ function voltar(){
   tb1 = document.getElementById('tb1');
   tb2 = document.getElementById('tb2');
   divtb = document.getElementById('divtb');
-  divtb.style.width = "30rem"
-  divtb.style.left = "40%"
-  tb1.style.display = 'block';
+  divtb.style.width = "100%"
+  tb1.style.display = 'inline-table';
   tb2.style.display = 'none';
 }
 
