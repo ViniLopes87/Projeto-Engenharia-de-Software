@@ -24,13 +24,13 @@ function exibirAlunos() {
       let tr = tbody.insertRow();
       
       let td_nome = tr.insertCell();
-      let td_matricula = tr.insertCell();
+      let td_cpf = tr.insertCell();
       let td_periodo = tr.insertCell();
       let td_status = tr.insertCell();
       let td_info = tr.insertCell();
 
       td_nome.innerText = result[i].nome;
-      td_matricula.innerText = result[i].matricula;
+      td_cpf.innerText = result[i].cpf;
       td_periodo.innerText = result[i].periodo+"º";
       td_status.innerText = result[i].status;
       
@@ -53,13 +53,13 @@ function filtrarAluno() {
       let tr = tbody2.insertRow();
   
       let td_nome = tr.insertCell();
-      let td_matricula = tr.insertCell();
+      let td_cpf = tr.insertCell();
       let td_periodo = tr.insertCell();
       let td_status = tr.insertCell();
       let td_info = tr.insertCell();
   
       td_nome.innerText = aluno.nome;
-      td_matricula.innerText = aluno.matricula;
+      td_cpf.innerText = aluno.cpf;
       td_periodo.innerText = aluno.periodo+"º";
       td_status.innerText = aluno.status;
       
