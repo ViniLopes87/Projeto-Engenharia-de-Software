@@ -3,5 +3,5 @@ document
   .addEventListener("click", () =>
     document.querySelector(".container").classList.toggle("show-menu")
   );
-ExibeSugestao();
+exibePendencia();
 //trocar pra exibePendencia
