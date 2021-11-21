@@ -7,5 +7,4 @@ document
 var form = document.getElementById("EnvSugest");
 function handleForm(event) {
   event.preventDefault();
- 
 }
