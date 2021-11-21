@@ -5,7 +5,6 @@ document
   );
 //evita a página recarregar ao apertar em "Enviar"
 var form = document.getElementById("EnvSugest");
-alert("Pendência enviada!");
 function handleForm(event) {
   event.preventDefault();
  
