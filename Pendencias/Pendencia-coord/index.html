@@ -8,9 +8,7 @@
     <title>Pendências</title>
   </head>
   <body>
-
     <div class="container">
-
         <div class="close">
           <div class="line" id="line1"></div>
           <div class="line" id="line2"></div>
@@ -28,8 +26,7 @@
               <p id="subtitulo">Reporte as Pendências aqui</p>
               <br>
             </div>
-        
-            <form name="EnvSugest" onsubmit="sendPendencia()" method="post" class="form" id="EnvSugest">      
+            <form name="EnvPendencia" onsubmit="sendPendencia()" method="post" class="form" id="EnvPendencia">      
               <div class="campo">
                 <label for="matricula"><strong>Matrícula do aluno</strong></label>
                 <input type="text" name="matricula" id="matricula" required>
@@ -40,34 +37,28 @@
               </div>
               <div class="campo">
                 <label for="data"><strong>Data de entrega</strong></label>
-                            <input type = "date" id ="prazo" name = "prazo" >
+                            <input type = "date" id ="prazo" name = "prazo" required>
               </div>
               <div class="campo">
                 <label for="experiencia"><strong>Sobre a Pendência : </strong></label>
                 <textarea rows="6" style="width: 26em" id="pendencia" name="pendencia" required></textarea>
                 <br>
-               
               </div>
-
-              <button class="botao" type="submit" onsubmit="sendPendencia()">Concluído</button>
-        
+              <button class="botao" type="submit" onsubmit="sendPendencia()">Concluído</button>   
             </form>
           </div>
         </header>
-
         <aside class="sidebar">
           <nav>
             <ul class="menu">
               <li class="menu-item"><a href="../../Menu/Menu-Aluno/index.html" class="menu-link">Home</a></li>
               <li class="menu-item"><a href="../../student-view/professor-view.html" class="menu-link">Visualizar os dados dos alunos</a></li>
-              
               <li class="menu-item"><a href="index.html" class="menu-link">Sugestão/Reclamação</a></li>
             </ul>
           </nav>
         </aside>
     </div>
    </body>
-
    <script src="app.js"></script>
-   <script src="../../javascript/ControleSugestoes.js"></script>
+   <script src="../../javascript/ControlePendencias.js"></script>
 </html>
