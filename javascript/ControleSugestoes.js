@@ -1,5 +1,4 @@
 var selectIssue = document.getElementById("issue");
-var opt = "";
 
 function SendSugestao() {
   qtd = Math.random() * (1000 - 1) + 1;
