@@ -29,7 +29,7 @@
               <br>
             </div>
         
-            <form name="" onsubmit="" method="post" class="form" id="">
+            <form name="EnvHist" onsubmit="addEmprego()" method="post" class="form" class="form" id="EnvHist">
               <div class="campo">
                 <label for="nome"><strong>Nome da Empresa:</strong></label>
                 <input type="text" name="nome" id="nome" required>
@@ -52,16 +52,16 @@
               <div class="campo">
                 <label><strong>Qual o seu cargo?</strong></label>
                 <label>
-                  <input type="radio" name="cargo" value="home" checked>QA
+                  <input type="radio" name="cargo" value="qa" checked>QA
                 </label>
                 <label>
-                  <input type="radio" name="cargo" value="visualizar">Front-end
+                  <input type="radio" name="cargo" value="frontend">Front-end
                 </label>
                 <label>
-                  <input type="radio" name="cargo" value="avaliacaoEmpresa">Back-end
+                  <input type="radio" name="cargo" value="backend">Back-end
                 </label>
                 <label>
-                  <input type="radio" name="cargo" value="login">Full Stack
+                  <input type="radio" name="cargo" value="fullstack">Full Stack
                 </label>
               </div>
 
@@ -70,7 +70,7 @@
                 <textarea rows="6" style="width: 26em" id="atividades" name="atividades" required></textarea>
               </div>
 
-              <button class="botao" type="submit" onsubmit="">Adicionar</button>
+              <button class="botao" type="submit" onsubmit="addEmprego()">Adicionar</button>
         
             </form>
           </div>
@@ -92,5 +92,5 @@
    </body>
 
    <script src="app.js"></script>
-   <script src=""></script>
+   <script src="../../javascript/ControleHistorico.js"></script>
 </html>
