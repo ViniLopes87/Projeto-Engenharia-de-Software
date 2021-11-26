@@ -158,8 +158,9 @@ header {
 
 #lista {
   position: absolute;
+  width: 150px;
   top: 25%;
-  left: 11%;
+  left: 35%;
   font-family: var(--font-secundary);
   color: #fff;
   font-size: 2rem;
