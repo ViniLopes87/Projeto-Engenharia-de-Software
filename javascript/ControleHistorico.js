@@ -22,6 +22,7 @@ function addEmprego() {
     }
   }
   aluno.status = HistInfo.status;
+  aluno.historico = HistInfo.nome;
   localStorage.setItem(aluno.cpf, JSON.stringify(aluno));
   window.location.href = "../listaHistorico/index.html";
   alert("Emprego adicionado!");
@@ -79,6 +80,7 @@ function RemoveEmprego() {
           JSON.stringify(HistF)
         );
         aluno.status = HistF.status;
+        aluno.historico = "--";
         localStorage.setItem(aluno.cpf, JSON.stringify(aluno));
         break;
       }
