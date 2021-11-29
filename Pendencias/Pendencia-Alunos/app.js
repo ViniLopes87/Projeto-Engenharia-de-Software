@@ -3,5 +3,10 @@ document
   .addEventListener("click", () =>
     document.querySelector(".container").classList.toggle("show-menu")
   );
-exibePendencia();
-//trocar pra exibePendencia
+  exibePendencia();
+  const addbtn = document.getElementById("addbtn");
+const tipouser = sessionStorage.getItem("logado").split(",");
+addbtn.style.display = "block";
+
+
+

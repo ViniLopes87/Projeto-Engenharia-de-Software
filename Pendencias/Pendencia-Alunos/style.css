@@ -223,6 +223,52 @@ table.redTable tfoot .links a{
 }
 
 
+button {
+  font-size: 2rem;
+  background: #660000;
+  border: 0;
+  color: #ffffff;
+  padding: 0.2em 0.6em;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  width: 150px;
+  height: 45px;
+}
+
+button:hover {
+  background: #642a2a;
+}
+
+.botao {
+  display: none;
+  font-size: 1em;
+  background: #660000;
+  border: 0;
+  margin-bottom: 1em;
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 0.0em 0.6em;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 93%;
+  left: 88%;
+  margin-right: -50%;
+  transform: translate(-50%, -100%);
+}
+
+.botao:hover {
+  background: #5f1b1b;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+}
+
+.botao,
+select {
+  cursor: pointer;
+}
+
+
 .sidebar {
   width: 22rem;
   height: 100vh;
