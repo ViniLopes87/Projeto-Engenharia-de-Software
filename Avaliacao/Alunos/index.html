@@ -29,7 +29,7 @@
                     <br/>
                 </div>
 
-                <form name="cadastroF" onsubmit="VerificarCadastroAluno()" method="post" class="form" id="formcad">
+                <form name="cadastroF"  method="post" class="form" id="formcad">
                     <div class="campo">
                         <label for="matricula"><strong>Matrícula da Empresa</strong></label>
                         <input type="text" name="matricula" id="matricula" required />
@@ -42,13 +42,13 @@
 
                     <div class="campo">
                         <label for="nota"><strong>Nota para a empresa:</strong></label>
-                        <select name="tipo" id="nota" required>
+                        <select name="nota" id="nota" required>
                             <option selected disabled value="">Selecione</option>
-                            <option value="nota1">5</option>
-                            <option value="nota2">4</option>
-                            <option value="nota3">3</option>
-                            <option value="nota4">2</option>
-                            <option value="nota5">1</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
                         </select>
                     </div>
 
@@ -74,7 +74,7 @@
                         <textarea rows="6" style="width: 26em" id="experiencia" name="experiencia" required></textarea>
                     </div>
 
-                    <button onclick="SendAvaliacao()" class="botao">Avaliar</button>
+                    <button onclick="adicionarAvaliacao()" class="botao">Avaliar</button>
                 </form>
             </div>
         </header>
@@ -107,5 +107,6 @@
 </body>
 
 <script src="app.js"></script>
+<script src="../../javascript/ControleAvaliacaoAluno.js"></script>
 
 </html>
